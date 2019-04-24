@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Doi Tien</title>
+</head>
+<body>
+    <br>
+    Amount
+    </br><br/>
+    <input type="number" name="" id="sotiennhapvao">
+    </br><br/>
+    From currency
+    <br/><br/>
+    <select id="frommoney">
+        <option value="USD">USD</option>
+        <option value="VND">Viet Nam</option>
+    </select>
+    <br/><br/>
+    To currency
+    <br/><br/>
+    <select id="tomoney">
+        <option value="VND">Viet Nam</option>
+        <option value="USD">USD</option>
+    </select>
+    <br/><br/>
+    <button onclick="chuyentien()">convert</button>
+    <br/><br/>
+    ket qua <p id="result"></p>
+
+<script>
+    function chuyentien() {
+        let frommoney = document.getElementById("frommoney").value;
+        let tomoney = document.getElementById("tomoney").value;
+        let stien = document.getElementById("sotiennhapvao").value;
+        let ST = parseFloat(stien);
+
+        if (frommoney === "USD" && tomoney === "VND") {
+             CT = ST * 23000;
+        } else if (frommoney === "VND" && tomoney === "USD") {
+             CT = ST / 23000;
+        } else {
+            CT = stien;
+        }
+
+        document.getElementById("result").innerHTML = CT;
+    }
+</script>
+
+</body>
+</html>
