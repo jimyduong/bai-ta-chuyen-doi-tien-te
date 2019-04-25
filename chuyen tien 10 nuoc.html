@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chuyen tien</title>
+</head>
+<body>
+<input type="number" id="input">
+from
+<select id="from">
+    <option value="1">USD</option>
+    <option value="23222">VND</option>
+    <option value="0.89691">EURO</option>
+    <option value="32.093">Bath Thai</option>
+    <option value="0.7752">GBP Bang Anh</option>
+    <option value="111.88">Yen Nhat</option>
+    <option value="6.7395">Nhan Dan Te</option>
+    <option value="64.648">Rup Nga</option>
+    <option value="1.4634">USD Sing</option>
+    <option value="7.442">USD Hong Kong</option>
+</select>
+To
+<select id="to">
+    <option value="1">USD</option>
+    <option value="23222">VND</option>
+    <option value="0.89691">EURO</option>
+    <option value="32.093">Bath Thai</option>
+    <option value="0.7752">GBP Bang Anh</option>
+    <option value="111.88">Yen Nhat</option>
+    <option value="6.7395">Nhan Dan Te</option>
+    <option value="64.648">Rup Nga</option>
+    <option value="1.4634">USD Sing</option>
+    <option value="7.442">USD Hong Kong</option>
+</select>
+<button onclick="chuyentien()">convert</button>
+<br>
+So tien la:
+<p id="hienthi"></p>
+<script>
+    function chuyentien() {
+        let input = document.getElementById("input").value;
+        let fromcr = document.getElementById("from").value;
+        let tocr = document.getElementById("to").value;
+
+        let nhap = parseFloat(input);
+        if (input <= 0) {
+            document.getElementById("hienthi").innerHTML = "Nhap chua dung, Moi Nhap lai";
+        } else {
+            KQ = (nhap * tocr) / fromcr;
+            document.getElementById("hienthi").innerHTML = KQ;
+
+        }
+    }
+</script>
+</body>
+</html>
